@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/home' , [HomeController::class , 'index']) ; 
 Route::get('/welcome' , [HomeController::class , 'welcome']) ; 
+Route::get('/faq' , [HomeController::class , 'faq']) ; 
 
