@@ -16,5 +16,8 @@ class HomeController extends Controller
     function faq(){
         return response()->json(['stat'=>'ok' , 'data'=>'faq']);
     }
+    function pages(){
+        return response()->json(['stat'=>'ok' , 'data'=>'pages']);
+    }
 
 }
