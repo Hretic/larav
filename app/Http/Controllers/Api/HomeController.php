@@ -13,5 +13,8 @@ class HomeController extends Controller
     function welcome(){
         return response()->json(['stat'=>'ok' , 'data'=>'welcome']);
     }
+    function faq(){
+        return response()->json(['stat'=>'ok' , 'data'=>'faq']);
+    }
 
 }
