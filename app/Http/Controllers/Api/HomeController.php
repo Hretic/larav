@@ -10,4 +10,8 @@ class HomeController extends Controller
     function index(){
         return response()->json(['stat'=>'ok' , 'data'=>'home']);
     }
+    function welcome(){
+        return response()->json(['stat'=>'ok' , 'data'=>'welcome']);
+    }
+
 }
