@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\HomeController ;
+use App\Http\Controllers\Api\ItemController ;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,3 +25,13 @@ Route::get('/welcome' , [HomeController::class , 'welcome']) ;
 Route::get('/faq' , [HomeController::class , 'faq']) ; 
 Route::get('/pages' , [HomeController::class , 'pages']) ; 
 
+
+Route::prefix('item')->group(function () {
+    Route::get('/', [ItemController::class , 'index']);
+    Route::post('/store', [ItemController::class , 'store']);
+    Route::post('/compelete/{item}', [ItemController::class , 'markAsCompelete']);
+    Route::post('/incompelete/{item}', [ItemController::class , 'markAsInCompelete']);
+
+    Route::put('/{item}', [ItemController::class , 'update']);
+    Route::delete('/{item}', [ItemController::class , 'destroy']);
+});
